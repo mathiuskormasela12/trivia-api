@@ -1,13 +1,13 @@
-// akun
-// admin
+Akun
+Admin
 email : admin@gmail.com
 password: Adm1n
 
-// user biasa
+User Biasa
 email : mathius12@gmail.com
 password : Mathius12
 
-// Daftar Endpoint 
+Daftar Endpoint 
 
 1. Login
 endpoint '/api/login'
