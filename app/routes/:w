@@ -1,0 +1,31 @@
+// ===== Pages
+// import all modules
+const express				= require('express');
+
+// import all controllers
+const appController	= require('../controllers/appController');
+const authController	= require('../controllers/authController');
+
+// init router
+const router				= express.Router();
+
+// Public Endpoint
+router.get('/', appController.home);
+router.post('/login', authController.login);
+
+// Questions Endpoint (User only)
+router.get('/questions/user', authController.isUser);
+router.get('/questions/user', appController.getQuestions);
+
+// Register Endpoint (Admin only)
+router.post('/register', authController.isAdmin);
+router.post('/register', authController.register);
+
+// Questions Endpoint (Admin only)
+router.post('/questions', authController.isAdmin);
+router.post('/questions', appController.addQuestion);
+router.get('/questions/admin', authController.isAdmin);
+router.get('/questions/admin', appController.getAllQuestions);
+
+
+module.exports = router;
